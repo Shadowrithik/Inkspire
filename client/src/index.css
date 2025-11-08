@@ -1,0 +1,103 @@
+/* Target the entire scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the vertical scrollbar track */
+  height: 10px; /* Height of the horizontal scrollbar track */
+}
+
+/* Target the track (the space the scrollbar moves in) */
+::-webkit-scrollbar-track {
+  background: #ffffff; /* White background for the track */
+  border-radius: 5px; /* Optional: adds rounded corners to the track */
+}
+
+/* Target the thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* Blue color for the thumb (Tailwind's blue-500) */
+  border-radius: 5px; /* Optional: adds rounded corners to the thumb */
+  /* Make the thumb slightly thinner than the track width/height */
+  border: 2px solid #ffffff; /* This creates the "thinner" effect by adding a white border around the blue thumb */
+}
+
+/* Optional: Style the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb; /* Darker blue on hover (Tailwind's blue-600) */
+}
+/* Import the cursive font for writing */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+/* Main paper texture and ruled lines */
+.ruled-paper {
+  /* Off-white parchment color */
+  background-color: #fcfaf4;
+  
+  /* Subtle paper grain texture */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMqADAAQAAAABAAAAMgAAAABbWn/bAAABMUlEQVRoBe2S0Q7CIAwAzf//Hk63VCp1Jd2kK9O+fGz40AUg9t7/4fT8EwGICJCIgEgEiEgAiQQYSQCJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEXuEz4A6oZwGqgL8lTAAAAABJRU5ErkJggg==');
+  
+  /* Ruled lines */
+  background-image: 
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMqADAAQAAAABAAAAMgAAAABbWn/bAAABMUlEQVRoBe2S0Q7CIAwAzf//Hk63VCp1Jd2kK9O+fGz40AUg9t7/4fT8EwGICJCIgEgEiEgAiQQYSQCJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEXuEz4A6oZwGqgL8lTAAAAABJRU5ErkJggg=='),
+    repeating-linear-gradient(
+      #fcfaf4 0px,
+      #fcfaf4 27px,
+      #e0d8c7 28px /* Faint parchment-colored line */
+    );
+  background-size: 100px 100px, 100% 28px;
+  line-height: 28px; /* Match the gradient */
+  padding-top: 4px;
+}
+
+/* Page curl shadow effect */
+.page-curl {
+  position: relative;
+  background-color: #fcfaf4; /* Match paper color */
+}
+.page-curl::before,
+.page-curl::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  width: 50%;
+  height: 20%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.page-curl::before {
+  left: 10px;
+  transform: rotate(-3deg);
+}
+.page-curl::after {
+  right: 10px;
+  transform: rotate(3deg);
+}
+
+/* Dark mode for paper */
+.dark .ruled-paper {
+  background-color: #2a2a2a;
+  background-image: 
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMqADAAQAAAABAAAAMgAAAABbWn/bAAABMUlEQVRoBe2S0Q7CIAwAzf//Hk63VCp1Jd2kK9O+fGz40AUg9t7/4fT8EwGICJCIgEgEiEgAiQQYSQCJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEkAiQyISACJDBhJAIkMGEXuEz4A6oZwGqgL8lTAAAAABJRU5ErkJggg=='),
+    repeating-linear-gradient(
+      #2a2a2a 0px,
+      #2a2a2a 27px,
+      #4a4a4a 28px
+    );
+}
+.dark .page-curl {
+  background-color: #2a2a2a;
+}
+.dark .page-curl::before,
+.dark .page-curl::after {
+   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+/*
+   Note on Arrows:
+   ::-webkit-scrollbar-button is not reliably styled or displayed across modern browsers.
+   If explicit scroll arrows are critical, they typically need to be implemented
+   as custom UI elements with JavaScript/HTML/CSS, rather than relying on native
+   scrollbar buttons. The provided design images do not show explicit scrollbar arrows
+   as part of the native scrollbar, but rather the main UI elements like 'prevBook'/'nextBook'
+   buttons serving that function for content carousels.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
